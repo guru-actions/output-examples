@@ -13,10 +13,6 @@ inputs:
 outputs:
   multi: ${{ steps.process.outputs.multi }} # the folder of artifacts
     description: 'multiplied'
-  add:  # the folder of artifacts
-    description: 'multiplied'
-  sub:  # the folder of artifacts
-    description: 'multiplied'   
 runs:
   using: composite
   steps:

@@ -15,11 +15,11 @@ outputs:
     value: "${{ steps.process.outputs.multiplied }}"
     description: 'multiplied'
   subtracted: 
-    value: "${{ steps.process.outputs.multiplied }}"
-    description: 'multiplied'
+    value: "${{ steps.process.outputs.subtracted }}"
+    description: 'subtracted'
   divided: 
-    value: "${{ steps.process.outputs.multiplied }}"
-    description: 'multiplied'
+    value: "${{ steps.process.outputs.divided }}"
+    description: 'divided'
 runs:
   using: composite
   steps:

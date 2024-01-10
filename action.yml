@@ -30,6 +30,6 @@ runs:
       run: |
         num1=${{ inputs.num1 }}
         num2=${{ inputs.num2 }}
-        echo "$((num1 * num2))|tr -d '\n'" >> $CLOUDBEES_OUTPUTS/multiplied
-        echo "$((num1 - num2))|tr -d '\n'" >> $CLOUDBEES_OUTPUTS/subtracted
-        echo "$((num1 / num2))|tr -d '\n'" >> $CLOUDBEES_OUTPUTS/divided
+        echo "$((num1 * num2))" >> $CLOUDBEES_OUTPUTS/multiplied
+        echo "$((num1 - num2))" >> $CLOUDBEES_OUTPUTS/subtracted
+        echo "$((num1 / num2))" >> $CLOUDBEES_OUTPUTS/divided

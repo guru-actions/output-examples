@@ -11,8 +11,14 @@ inputs:
     description: simple input of a number to be processed 1 
     required: true
 outputs:
-  multi: 
-    value: "${{ steps.process.outputs.multi }}"
+  multipled: 
+    value: "${{ steps.process.outputs.multiplied }}"
+    description: 'multiplied'
+  subtracted: 
+    value: "${{ steps.process.outputs.multiplied }}"
+    description: 'multiplied'
+  divided: 
+    value: "${{ steps.process.outputs.multiplied }}"
     description: 'multiplied'
 runs:
   using: composite
@@ -24,5 +30,6 @@ runs:
       run: |
         num1=${{ inputs.num1 }}
         num2=${{ inputs.num2 }}
-        ans=$((num1 * num2))
-        echo "$((num1 * num2))" >> $CLOUDBEES_OUTPUTS/multi
+        echo "$((num1 * num2))" >> $CLOUDBEES_OUTPUTS/multiplied
+        echo "$((num1 - num2))" >> $CLOUDBEES_OUTPUTS/subtracted
+        echo "$((num1 / num2))" >> $CLOUDBEES_OUTPUTS/divided

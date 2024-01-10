@@ -12,6 +12,7 @@ inputs:
     required: true
 outputs:
   multi: 
+    value: "${{ steps.process.outputs.multi }}"
     description: 'multiplied'
 runs:
   using: composite

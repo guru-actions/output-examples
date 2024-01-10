@@ -12,7 +12,7 @@ inputs:
     required: true
 outputs:
   multiplied: 
-    value: "${{ steps.process.outputs.multiplied }}"
+    value: ${{ steps.process.outputs.multiplied }}
     description: 'multiplied'
   subtracted: 
     value: "${{ steps.process.outputs.subtracted }}"

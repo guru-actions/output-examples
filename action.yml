@@ -11,7 +11,7 @@ inputs:
     description: simple input of a number to be processed 1 
     required: true
 outputs:
-  multi:  # the folder of artifacts
+  multi: ${{ steps.process.outputs.multi }} # the folder of artifacts
     description: 'multiplied'
   add:  # the folder of artifacts
     description: 'multiplied'
@@ -28,4 +28,4 @@ runs:
         num1=${{ inputs.num1 }}
         num2=${{ inputs.num2 }}
         ans=$((num1 * num2))
-        echo foobar > $CLOUDBEES_OUTPUTS/multi
+        echo "multi=$ans" >> $CLOUDBEES_OUTPUTS

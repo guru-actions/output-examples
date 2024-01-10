@@ -10,9 +10,7 @@ inputs:
   num2:
     description: simple input of a number to be processed 1 
     required: true
-outputs:
-  multi: ${{ steps.process.outputs.multi }} # the folder of artifacts
-    description: 'multiplied'
+
 runs:
   using: composite
   steps:

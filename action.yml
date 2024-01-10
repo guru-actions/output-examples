@@ -28,4 +28,4 @@ runs:
         num1=${{ inputs.num1 }}
         num2=${{ inputs.num2 }}
         ans=$((num1 * num2))
-        echo $ans > $CLOUDBEES_OUTPUTS/multi
+        echo foobar > $CLOUDBEES_OUTPUTS/multi

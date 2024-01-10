@@ -4,12 +4,19 @@ kind: action
 name: output-examples
 description: show simple exampled of outputs
 inputs:
-  name:
-    description: simple inputt of a name
+  num1:
+    description: simple input of a number to be processed 1 
+    required: true
+  num2:
+    description: simple input of a number to be processed 1 
     required: true
 outputs:
-  minput:  # the folder of artifacts
-    description: 'output from an input '
+  multi:  # the folder of artifacts
+    description: 'multiplied'
+  add:  # the folder of artifacts
+    description: 'multiplied'
+  sub:  # the folder of artifacts
+    description: 'multiplied'   
 runs:
   using: composite
   steps:
@@ -19,3 +26,7 @@ runs:
       shell: sh
       run: |
         echo ${{ inputs.name }} > $CLOUDBEES_OUTPUTS/minput
+        num1=${{ inputs.num1 }}
+        num2=${{ inputs.num2 }}
+        ans=$((num1 * num2)
+        echo $ans > $CLOUDBEES_OUTPUTS/multi

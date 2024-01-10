@@ -1,0 +1,21 @@
+---
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: action
+name: output-examples
+description: show simple exampled of outputs
+inputs:
+  name:
+    description: simple inputt of a name
+    required: true
+outputs:
+  minput:  # the folder of artifacts
+    description: 'output from an input '
+runs:
+  using: composite
+  steps:
+    - id: process
+      name: process the inputs
+      uses: docker://golang:1.20.3-alpine3.17
+      shell: sh
+      run: |
+        echo ${{ inputs.name }} > $CLOUDBEES_OUTPUTS/minput
